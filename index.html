@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="greet.js"></script>
+    <script src="greet-widget.js"></script>
+    <script src="enough-airtime.js"></script>
+    <script src="enough-airtime-widget.js"></script>
+    <script src="total-phone-bill.js"></script>
+    <script src="total-phone-bill-widget.js"></script>
+    <script src="transport-fee.js"></script>
+    <script src="transport-fee-widget.js"></script>
+    <script src="expensive-items.js"></script>
+    <script src="expensive-items-widget.js"></script>
+    <script src="word-game.js"></script>
+    <script src="word-game-widget.js"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link rel="stylesheet" href="style.css">
+    
+    
+</head>
+<body>
+    <h1>Bootcamp alpineJS widgets</h1>
+
+    <div class="widget" x-data="greetWidget">
+        <h2>Greet Widget</h2>
+        <div x-show="message.length > 0" class="message" x-text="message">
+            You will be greeted here...
+        </div>
+        <label for="name"> Please enter your name:</label>
+        <input type="text" x-model="name" id="name">
+        <button x-on:click="greetMe">Greet!</button>
+    </div>
+
+    <div class="widget" x-data="enoughAirtimeWidget">
+        <h2>Enough Airtime Widget</h2>
+
+        <div class="input">
+            <label for="usage">Please enter your airtime usage:</label>
+            <input type="text" x-model="airtimeUsage" id="usage">
+        </div>
+
+        <div class="input">
+            <label for="amount">Amount available:</label>
+            <input type="text" x-model="availableAmount" id="amount">
+        </div>
+
+        <div class="message" x-text="airtimeMessage">
+
+        </div>
+
+        <div>
+            <button x-on:click="calculate">Calculate airtime usage</button>
+        </div>
+    </div>
+
+    <div class="widget" x-data="totalPhoneBillWidget">
+        <h2>Total Phone Bill Widget</h2>
+
+        <div class="input">
+            <label for="usage">Please enter your phone usage:</label>
+            <input type="text" x-model="airtimeUsage" id="usage">
+        </div>
+
+        <div class="message" x-text="airtimeMessage">
+
+        </div>
+
+        <div>
+            <button x-on:click="calculate">Calculate Total phone bill</button>
+        </div>
+    </div>
+
+    <div class="widget" x-data="transportFeeWidget">
+        <h2>Transport Fee Widget</h2>
+        <div class="input">
+            <label for="shift">Please enter your shift:</label>
+            <input type="text" x-model="workingShift" id="shift">
+        </div>
+
+        <div class="message" x-text="transportFeeMessage">
+
+        </div>
+
+        <div>
+            <button x-on:click="calculate">Calculate Transport fee</button>
+        </div>
+    </div>
+    
+    <div class="widget" x-data="">
+        <h2>Word Game Widget</h2>
+        <div class="games">
+            <div class="game" x-data="longestWordWidget">
+                <h3>Longest word</h3>
+                <div class="input">
+                    <label for="sentences">Please enter the sentence:</label>
+                    <input type="text" x-model="sentence" id="sentences">
+                </div>
+
+                <div class="message" x-text="word">
+
+                </div>
+
+                <div>
+                    <button x-on:click="calculate">Find the longest word</button>
+                </div>
+            </div>
+
+            <div class="game" x-data="shortestWordWidget">
+                <h3>Shortest word</h3>
+                <div class="input">
+                    <label for="sentences">Please enter the sentence:</label>
+                    <input type="text" x-model="sentence" id="sentences">
+                </div>
+
+                <div class="message" x-text="word">
+
+                </div>
+
+                <div>
+                    <button x-on:click="calculate">Find the Shortest word</button>
+                </div>
+
+            </div>
+
+            <div class="game" x-data="wordLengthWidget">
+                <h3>Sentence length</h3>
+                <div class="input">
+                    <label for="sentences">Please enter the sentence:</label>
+                    <input type="text" x-model="sentence" id="sentences">
+                </div>
+
+                <div class="message" x-text="word">
+
+                </div>
+
+                <div>
+                    <button x-on:click="calculate">Find the length of the sentence</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="widget">
+        <h2>Expensive Items Widget</h2>
+        <div class="items" x-data="expensiveItemWidget">
+            <div class="item">
+                <h3>Items Over 20</h3>
+                <div class="input">
+                    <label for="items">Please enter the list of items:</label>
+                    <input type="text" x-model="itemList" id="items">
+                </div>
+
+                <div class="message" x-text="expensiveItemMessage">
+
+                </div>
+
+                <div>
+                    <button x-on:click="calculate">Find expensive items</button>
+                </div>
+            </div>
+
+            <div class="item" x-data="expensiveItemsWidget">
+                <h3>Items Over</h3>
+                <div class="input">
+                    <label for="items">Please enter items List:</label>
+                    <input type="text" x-model="itemsList" id="items">
+                </div>
+
+                <div class="input">
+                    <label for="amount">Enter threshold amount:</label>
+                    <input type="text" x-model="thresholdAmount" id="amount">
+                </div>
+
+                <div class="message" x-text="expensiveItemsMessage">
+
+                </div>
+
+                <div>
+                    <button x-on:click="calculate">Find expensive items</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

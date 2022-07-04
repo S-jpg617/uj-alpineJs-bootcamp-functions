@@ -1,0 +1,78 @@
+
+        body {
+            font-family: yellow;
+            background-color: orangered;
+        }
+
+        .message {
+            padding: 1em;
+            margin-bottom: 1em;
+            background-color: yellow;
+        }
+
+        .input>label {
+            display: inline-block;
+            width: 15em;
+            padding: 0.5em;
+            font-weight: bold;
+
+        }
+
+        .input>input[type="text"] {
+            padding: 0.5em;
+            margin: 0.5em;
+            background-color: orange;
+
+        }
+
+        .widgets {
+            display: flex;
+        }
+
+        .widget {
+            flex: 1;
+            border: 1px solid;
+            margin: 1em;
+            padding: 1em;
+            border-radius: 0.5em;
+            background-color: rgb(43, 226, 58);
+        }
+
+        /*.items {
+            display: flex;
+        }*/
+
+        .item {
+            flex: 1;
+            border: 1px solid lightgrey;
+            margin: 1em;
+            padding: 1em;
+            border-radius: 0.5em;
+        }
+
+        /*.games {
+            display: flex;
+        }*/
+
+        .game {
+            flex: 1;
+            border: 1px solid lightgrey;
+            margin: 1em;
+            padding: 1em;
+            border-radius: 0.5em;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .games {
+            display: flex;
+        }
+            .items {
+            display: flex;
+        }
+    }
+
+  
