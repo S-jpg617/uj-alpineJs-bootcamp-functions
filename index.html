@@ -13,8 +13,6 @@
     <script src="total-phone-bill-widget.js"></script>
     <script src="transport-fee.js"></script>
     <script src="transport-fee-widget.js"></script>
-    <script src="expensive-items.js"></script>
-    <script src="expensive-items-widget.js"></script>
     <script src="word-game.js"></script>
     <script src="word-game-widget.js"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
@@ -23,10 +21,11 @@
     
 </head>
 <body>
-    <h1>Bootcamp alpineJS widgets</h1>
+    <h1>My bootcamp AlpineJS widgets</h1>
 
     <div class="widget" x-data="greetWidget">
         <h2>Greet Widget</h2>
+        <p>The widget takes your name as a parameter and returns a greeting message.</p>
         <div x-show="message.length > 0" class="message" x-text="message">
             You will be greeted here...
         </div>
@@ -37,7 +36,7 @@
 
     <div class="widget" x-data="enoughAirtimeWidget">
         <h2>Enough Airtime Widget</h2>
-
+        <p>The widget calculates if you will have enough airtime based on their projected usage.</p>
         <div class="input">
             <label for="usage">Please enter your airtime usage:</label>
             <input type="text" x-model="airtimeUsage" id="usage">
@@ -48,7 +47,7 @@
             <input type="text" x-model="availableAmount" id="amount">
         </div>
 
-        <div class="message" x-text="airtimeMessage">
+        <span>Results:</span><div Results class="message" x-text="airtimeMessage">
 
         </div>
 
@@ -59,13 +58,13 @@
 
     <div class="widget" x-data="totalPhoneBillWidget">
         <h2>Total Phone Bill Widget</h2>
-
+        <p>This widget calculates the total bill for the data provided based on the projected usage.</p>
         <div class="input">
             <label for="usage">Please enter your phone usage:</label>
             <input type="text" x-model="airtimeUsage" id="usage">
         </div>
 
-        <div class="message" x-text="airtimeMessage">
+        <span>Results:</span><div class="message" x-text="airtimeMessage">
 
         </div>
 
@@ -76,31 +75,34 @@
 
     <div class="widget" x-data="transportFeeWidget">
         <h2>Transport Fee Widget</h2>
+        <p>The widget checks the transport fee based on the shift you are working.</p>
         <div class="input">
             <label for="shift">Please enter your shift:</label>
             <input type="text" x-model="workingShift" id="shift">
         </div>
 
-        <div class="message" x-text="transportFeeMessage">
+        <span>Results:</span><div class="message" x-text="transportFeeMessage">
 
         </div>
 
         <div>
-            <button x-on:click="calculate">Calculate Transport fee</button>
+            <button x-on:click="calculate">Check Transport fee</button>
         </div>
     </div>
     
     <div class="widget" x-data="">
         <h2>Word Game Widget</h2>
+        <p>The widget solves some word puzzles in a Word Cruch puzzle game.</p>
         <div class="games">
             <div class="game" x-data="longestWordWidget">
                 <h3>Longest word</h3>
+                <p>This section finds the longest word in a sentence.</p>
                 <div class="input">
                     <label for="sentences">Please enter the sentence:</label>
                     <input type="text" x-model="sentence" id="sentences">
                 </div>
 
-                <div class="message" x-text="word">
+                <span>Results:</span><div class="message" x-text="word">
 
                 </div>
 
@@ -111,12 +113,13 @@
 
             <div class="game" x-data="shortestWordWidget">
                 <h3>Shortest word</h3>
+                <p>This section finds the shortest word in a sentence.</p>
                 <div class="input">
                     <label for="sentences">Please enter the sentence:</label>
                     <input type="text" x-model="sentence" id="sentences">
                 </div>
 
-                <div class="message" x-text="word">
+                <span>Results:</span><div class="message" x-text="word">
 
                 </div>
 
@@ -128,12 +131,13 @@
 
             <div class="game" x-data="wordLengthWidget">
                 <h3>Sentence length</h3>
+                <p>This section finds the sum of length of each word in a sentence.</p>
                 <div class="input">
                     <label for="sentences">Please enter the sentence:</label>
                     <input type="text" x-model="sentence" id="sentences">
                 </div>
 
-                <div class="message" x-text="word">
+                <span>Results:</span><div class="message" x-text="word">
 
                 </div>
 
@@ -143,48 +147,6 @@
 
             </div>
 
-        </div>
-    </div>
-
-    <div class="widget">
-        <h2>Expensive Items Widget</h2>
-        <div class="items" x-data="expensiveItemWidget">
-            <div class="item">
-                <h3>Items Over 20</h3>
-                <div class="input">
-                    <label for="items">Please enter the list of items:</label>
-                    <input type="text" x-model="itemList" id="items">
-                </div>
-
-                <div class="message" x-text="expensiveItemMessage">
-
-                </div>
-
-                <div>
-                    <button x-on:click="calculate">Find expensive items</button>
-                </div>
-            </div>
-
-            <div class="item" x-data="expensiveItemsWidget">
-                <h3>Items Over</h3>
-                <div class="input">
-                    <label for="items">Please enter items List:</label>
-                    <input type="text" x-model="itemsList" id="items">
-                </div>
-
-                <div class="input">
-                    <label for="amount">Enter threshold amount:</label>
-                    <input type="text" x-model="thresholdAmount" id="amount">
-                </div>
-
-                <div class="message" x-text="expensiveItemsMessage">
-
-                </div>
-
-                <div>
-                    <button x-on:click="calculate">Find expensive items</button>
-                </div>
-            </div>
         </div>
     </div>
     
